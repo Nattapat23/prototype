@@ -58,7 +58,7 @@ export default function SessionDetailPage({ params }: { params: Promise<{ id: st
   }
 
   return (
-    <div className="max-w-xl mx-auto space-y-5">
+    <div className="max-w-xl mx-auto space-y-4 sm:space-y-5">
       {/* Back link */}
       <Link href="/" className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-primary transition-colors">
         ← กลับหน้าแรก
@@ -98,13 +98,13 @@ export default function SessionDetailPage({ params }: { params: Promise<{ id: st
         )}
       </div>
 
-      {/* Countdown card */}
-      <div className="bg-primary rounded-2xl p-4 text-white flex items-center justify-between">
+      {/* Countdown card — larger font on mobile for easy reading */}
+      <div className="bg-primary rounded-2xl p-4 sm:p-5 text-white flex items-center justify-between">
         <div>
           <p className="text-sm font-medium opacity-80">เวลาเริ่ม session</p>
-          <p className="text-2xl font-bold">{countdown}</p>
+          <p className="text-3xl sm:text-2xl font-bold">{countdown}</p>
         </div>
-        <span className="text-4xl">⏰</span>
+        <span className="text-4xl sm:text-4xl">⏰</span>
       </div>
 
       {/* Members card */}
@@ -122,11 +122,11 @@ export default function SessionDetailPage({ params }: { params: Promise<{ id: st
           />
         </div>
 
-        {/* Member list */}
-        <div className="space-y-2.5">
+        {/* Member list — responsive grid on wider screens */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           {members.map((member) => (
             <div key={member.id} className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm flex items-center justify-center flex-shrink-0">
+              <div className="w-9 h-9 rounded-full bg-violet-100 text-violet-700 font-bold text-sm flex items-center justify-center flex-shrink-0">
                 {member.avatar}
               </div>
               <div className="flex-1 min-w-0">
@@ -144,6 +144,7 @@ export default function SessionDetailPage({ params }: { params: Promise<{ id: st
             </div>
           ))}
         </div>
+
       </div>
 
       {/* Action buttons */}

@@ -2,11 +2,11 @@
 
 /* Design tokens for CMU Sport Buddy */
 @theme {
-  --color-primary: #10b981;        /* emerald-500 — energetic sport green */
-  --color-primary-dark: #059669;   /* emerald-600 — hover state */
-  --color-primary-light: #d1fae5;  /* emerald-100 — subtle bg */
+  --color-primary: #7C3AED;        /* violet-600 — primary brand */
+  --color-primary-dark: #6D28D9;   /* violet-700 — hover state */
+  --color-primary-light: #EDE9FE;  /* violet-100 — subtle bg */
   --color-accent: #3b82f6;         /* blue-500 — secondary accent */
-  --color-bg-main: #f0fdf4;        /* green-50 — main background */
+  --color-bg-main: #F5F3FF;        /* violet-50 — main background */
   --color-bg-card: #ffffff;        /* white card */
   --color-text-main: #111827;      /* gray-900 */
   --color-text-muted: #6b7280;     /* gray-500 */
@@ -16,4 +16,13 @@ body {
   background-color: var(--color-bg-main);
   color: var(--color-text-main);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide scrollbar visually but keep scrolling functional — used for horizontal scroll bars */
+.scrollbar-hide {
+  -ms-overflow-style: none;   /* IE and Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Opera */
 }

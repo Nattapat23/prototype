@@ -55,7 +55,8 @@ export default function ChatPage({ params }: { params: Promise<{ id: string }> }
   }
 
   return (
-    <div className="max-w-xl mx-auto flex flex-col h-[calc(100vh-80px)]">
+    // Full-height flex column — on mobile stretches to fill viewport below the navbar
+    <div className="max-w-xl mx-auto flex flex-col" style={{ height: 'calc(100dvh - 56px)' }}>
 
       {/* Chat header */}
       <div className="bg-white rounded-2xl shadow-sm border border-black/5 p-4 mb-3 flex items-center justify-between">
@@ -92,7 +93,7 @@ export default function ChatPage({ params }: { params: Promise<{ id: string }> }
             <div key={msg.id} className={`flex items-end gap-2 ${isMe ? 'flex-row-reverse' : ''}`}>
               {/* Avatar */}
               {!isMe && (
-                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xs flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-violet-100 text-violet-700 font-bold text-xs flex items-center justify-center flex-shrink-0">
                   {msg.sender.avatar}
                 </div>
               )}

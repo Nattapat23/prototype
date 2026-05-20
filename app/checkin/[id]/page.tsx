@@ -79,9 +79,9 @@ export default function CheckInPage({ params }: { params: Promise<{ id: string }
         ) : (
           <div className="relative">
             {/* Mock uploaded photo placeholder */}
-            <div className="w-full h-48 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl flex flex-col items-center justify-center gap-2">
+            <div className="w-full h-48 bg-gradient-to-br from-violet-100 to-violet-200 rounded-xl flex flex-col items-center justify-center gap-2">
               <span className="text-5xl">🏟️</span>
-              <p className="text-sm text-emerald-700 font-medium">รูปอัปโหลดสำเร็จ!</p>
+              <p className="text-sm text-violet-700 font-medium">รูปอัปโหลดสำเร็จ!</p>
             </div>
             {/* Remove / re-upload */}
             <button
@@ -103,7 +103,7 @@ export default function CheckInPage({ params }: { params: Promise<{ id: string }
           ✅ ยืนยันการเข้าร่วม (ตัวคุณเอง)
         </button>
       ) : (
-        <div className="w-full py-3 rounded-xl font-semibold text-center bg-emerald-50 text-emerald-700 border border-emerald-200">
+        <div className="w-full py-3 rounded-xl font-semibold text-center bg-violet-50 text-violet-700 border border-violet-200">
           ✅ คุณได้ยืนยันการเข้าร่วมแล้ว
         </div>
       )}
@@ -125,18 +125,18 @@ export default function CheckInPage({ params }: { params: Promise<{ id: string }
           />
         </div>
 
-        {/* Member list with confirm toggles */}
+        {/* Member list with confirm toggles — stacks cleanly on mobile */}
         <div className="space-y-3">
           {session.members.map((member) => {
             const status = statuses.find((s) => s.memberId === member.id)
             const confirmed = status?.confirmed ?? false
 
             return (
-              <div key={member.id} className="flex items-center gap-3">
+              <div key={member.id} className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
                 {/* Avatar */}
                 <div
                   className={`w-10 h-10 rounded-full font-bold text-sm flex items-center justify-center flex-shrink-0 transition-colors ${
-                    confirmed ? 'bg-emerald-100 text-emerald-700' : 'bg-gray-100 text-gray-500'
+                    confirmed ? 'bg-violet-100 text-violet-700' : 'bg-gray-100 text-gray-500'
                   }`}
                 >
                   {member.avatar}
@@ -154,8 +154,8 @@ export default function CheckInPage({ params }: { params: Promise<{ id: string }
                 </div>
 
                 {/* Status badge + toggle button */}
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <span className={`text-xs font-medium ${confirmed ? 'text-emerald-600' : 'text-amber-500'}`}>
+                <div className="flex items-center gap-2 shrink-0 ml-auto sm:ml-0">
+                  <span className={`text-xs font-medium ${confirmed ? 'text-violet-600' : 'text-amber-500'}`}>
                     {confirmed ? '✅ ยืนยันแล้ว' : '⏳ รอยืนยัน'}
                   </span>
                   {/* Only allow confirming others (not self — self uses the button above) */}

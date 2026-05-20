@@ -34,13 +34,13 @@ export default function HomePage() {
         <p className="text-gray-500 text-sm mt-1">เลือก session ที่สนใจแล้วเข้าร่วมได้เลย</p>
       </div>
 
-      {/* Filter bar */}
-      <div className="flex gap-2 flex-wrap mb-6">
+      {/* Filter bar — scrollable on mobile, wraps on larger screens */}
+      <div className="flex gap-2 overflow-x-auto pb-1 sm:flex-wrap mb-6 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-hide">
         {FILTERS.map((f) => (
           <button
             key={f.value}
             onClick={() => setActiveFilter(f.value)}
-            className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all border ${
+            className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all border shrink-0 ${
               activeFilter === f.value
                 ? 'bg-primary text-white border-primary shadow-sm'
                 : 'bg-white text-gray-600 border-gray-200 hover:border-primary hover:text-primary'

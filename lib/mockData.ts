@@ -52,7 +52,7 @@ export type Member = User
 
 // Sport metadata
 export const SPORTS: Record<SportType, { label: string; emoji: string; color: string }> = {
-  football:   { label: 'ฟุตบอล',     emoji: '⚽', color: 'bg-green-100 text-green-700' },
+  football:   { label: 'ฟุตบอล',     emoji: '⚽', color: 'bg-violet-100 text-violet-700' },
   basketball: { label: 'บาสเกตบอล', emoji: '🏀', color: 'bg-orange-100 text-orange-700' },
   badminton:  { label: 'แบดมินตัน', emoji: '🏸', color: 'bg-blue-100 text-blue-700' },
   running:    { label: 'วิ่ง',        emoji: '🏃', color: 'bg-yellow-100 text-yellow-700' },
